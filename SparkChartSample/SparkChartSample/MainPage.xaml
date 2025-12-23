@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sparkchart="clr-namespace:Syncfusion.Maui.Toolkit.SparkCharts;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:local="clr-namespace:SparkChartSample"
+             x:Class="SparkChartSample.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="20*,80*" Margin="20">
+
+        <Label Grid.Row="0" Text="Stock Price Trend" HorizontalTextAlignment="Center"
+               FontSize="18" FontAttributes="Bold"/>
+
+        <sparkchart:SfSparkColumnChart Grid.Row="1" ItemsSource="{Binding Data}" 
+                                       YBindingPath="Value" Padding="20" 
+                                       FirstPointFill="YellowGreen"
+                                       LastPointFill="BlueViolet"
+                                       HighPointFill="DeepPink"
+                                       LowPointFill="Salmon"
+                                       NegativePointsFill="ForestGreen">
+        </sparkchart:SfSparkColumnChart>
+
+    </Grid>
+
+</ContentPage>
